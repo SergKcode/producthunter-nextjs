@@ -42,7 +42,7 @@ const P = styled.p`
 `;
 
 const Header = () => {
-    const user =true
+    const user = false
 
     return ( 
         <HeaderTag

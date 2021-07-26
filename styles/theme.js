@@ -9,7 +9,8 @@ const theme = {
         orange:"#DA552F",
         white:"#FFFFFF",
         black:"#000",
-        red:"#DA552F"
+        red:"#DA552F",
+        
         
 
 

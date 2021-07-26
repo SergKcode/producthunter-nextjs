@@ -4,6 +4,8 @@ import styled from 'styled-components';
 
 import Browser from '../ui/Browser';
 import Navigation from './Navigation';
+import Button from '../ui/Button';
+
 
 
 
@@ -18,12 +20,12 @@ const HeaderContainer = styled.div`
 `;
 
 const HeaderTag = styled.header`
-    border-bottom: 2px solid grey;
-        padding: 1rem 0;
+    border-bottom: 2px solid ${props => props.theme.colors.secondary};
+    padding: 1rem 0;
 `;
 
 const Logo = styled.a`
-    color: orange;
+    color:${props => props.theme.colors.orange};
     font-size: 4rem;
     line-height: 0;
     font-weight: 700;
@@ -40,6 +42,7 @@ const P = styled.p`
 `;
 
 const Header = () => {
+    const user =true
 
     return ( 
         <HeaderTag
@@ -64,11 +67,21 @@ const Header = () => {
                 <Div
                     
                 >
-                
-                    <P>Hello</P>
-                    <button type="Button">Log Out</button>
-                    <Link href="/login">Login</Link>
-                    <Link href="/new-account">Create Account</Link>
+                    { user ?(
+                        <>
+                            <P>Hello</P>
+                            <Button bgColor type="Button">Log Out</Button>
+                         </>
+                    ):(
+                        <>
+                            <Link href="/login">
+                                <Button bgColor>Login</Button>
+                            </Link>
+                            <Link href="/new-account">
+                                <Button>Create Account</Button>
+                            </Link>
+                        </>
+                    )}
                 </Div>
             </HeaderContainer>
         </HeaderTag>

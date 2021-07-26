@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import Layout from '../components/layout/Layout'
 
 const H1 = styled.h1`
 color:red;
@@ -7,9 +8,12 @@ color:red;
 
 const Home=()=> {
   return (
-    <div>
-      <H1>Inicio</H1>
-    </div>
+
+    <Layout>
+      <div>
+        <H1>Inicio</H1>
+      </div>
+    </Layout>
     
   )
 }

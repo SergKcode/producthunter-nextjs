@@ -2,6 +2,9 @@ import React, { useContext } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
+import Browser from '../ui/Browser';
+import Navigation from './Navigation';
+
 
 
 const HeaderContainer = styled.div`
@@ -14,7 +17,7 @@ const HeaderContainer = styled.div`
     }
 `;
 
-const Header = styled.header`
+const HeaderTag = styled.header`
     border-bottom: 2px solid grey;
         padding: 1rem 0;
 `;
@@ -39,7 +42,7 @@ const P = styled.p`
 const Header = () => {
 
     return ( 
-        <Header
+        <HeaderTag
         
         >
             <HeaderContainer>
@@ -51,38 +54,24 @@ const Header = () => {
                     </Link>
                     
 
-                    <Buscar />
+                    <Browser/>
 
-                    <Navegacion />
+                    <Navigation/>
+
+                
                 </Div>
 
                 <Div
                     
                 >
-                    { usuario ? (
-                        <>
-                            <P
-                            >Hola: user</P>
-                            <button
-            
-                                onClick={console.log("button")}
-                            >Log out</button>
-                        </>
-                    ) : (
-                        <>
-                            <Link href="/login">
-                                <button
-                                   
-                                >Login</button>
-                            </Link>
-                            <Link href="/sign-up">
-                                <button>Sign Up</button>
-                            </Link>
-                        </>
-                    ) }
+                
+                    <P>Hello</P>
+                    <button type="Button">Log Out</button>
+                    <Link href="/login">Login</Link>
+                    <Link href="/new-account">Create Account</Link>
                 </Div>
             </HeaderContainer>
-        </Header>
+        </HeaderTag>
      );
 }
  

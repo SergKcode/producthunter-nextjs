@@ -1,12 +1,24 @@
 import Theme from "../styles/theme";
 import GlobalStyles from '../styles/GlobalStyles';
+import firebase, {FirebaseContext} from '../firebase'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ props }) {
+
+  const {Component, pageProps} = props;
+
   return( 
-    <Theme>
-      <GlobalStyles/>
-      <Component {...pageProps} />
-    </Theme>
+    
+      <Theme>
+        <GlobalStyles/>
+          <FirebaseContext.Provider
+          value={{
+            firebase,
+           }}
+          >
+          <Component {...pageProps} />
+        </FirebaseContext.Provider>
+      </Theme>
+    
   )
 
 }

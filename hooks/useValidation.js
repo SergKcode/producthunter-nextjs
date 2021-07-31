@@ -1,11 +1,11 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 
 //3 parametres: initial state, thing to validate and function to execute when we do submit
 const useValidation=(initialState, validate, fn)=>{
     
    const [values, setValues]=useState (initialState)
-   const [errors, setErorrs]=useState ({})
+   const [errors, setErrors]=useState ({})
    const [submitForm, setSubmitForm] = useState (false)
 
    useEffect(()=>{
@@ -15,13 +15,13 @@ const useValidation=(initialState, validate, fn)=>{
             const noErrors =Object.keys(errors).length===0;
 
             if(noErrors){
-                fn();
+                fn();// funtion to execute in the component
             }
 
             setSubmitForm(false)
         }
 
-   },[])
+   },[errors])
 
    // function that execute when user types something
    const handleChange = e =>{
@@ -43,7 +43,7 @@ const useValidation=(initialState, validate, fn)=>{
 
     // function that execute when blur event
     const handleBlur = () => {
-        const validationErrors = validar(values);
+        const validationErrors = validate(values);
         setErrors(validationErrors);
     }
 

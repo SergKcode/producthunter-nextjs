@@ -8,15 +8,14 @@ const H1 = styled.h1`
 
 const Search =()=> {
   return (
+
     <div>
         <Layout>
       
             <H1>Search</H1>
 
         </Layout>
-    
     </div>
-    
   )
 }
 

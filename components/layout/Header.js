@@ -25,7 +25,7 @@ const HeaderTag = styled.header`
 `;
 
 const Logo = styled.a`
-    color:${props => props.theme.colors.orange};
+    color:${props => props.theme.colors.primary};
     font-size: 4rem;
     line-height: 0;
     font-weight: 700;
@@ -77,7 +77,7 @@ const Header = () => {
                             <Link href="/login">
                                 <Button bgColor>Login</Button>
                             </Link>
-                            <Link href="/new-account">
+                            <Link href="/create-account">
                                 <Button>Create Account</Button>
                             </Link>
                         </>

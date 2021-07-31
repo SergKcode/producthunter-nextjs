@@ -6,12 +6,17 @@ const Nav = styled.nav`
     padding-left: 2rem;
 
     a {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
         margin-left: 2rem;
-        color:${props => props.theme.colors.orange};
+        color:${props => props.theme.colors.primary};
         font-family: 'PT Sans', sans-serif;
         &:last-of-type {
             margin-right: 0;
+        }
+
+        &:hover{
+            color:${props => props.theme.colors.blue};
+
         }
     }
 
@@ -24,7 +29,7 @@ const Navigation = () => {
                 <a>Home</a>
             </Link>
             <Link href="/popular">
-                <a>Most Popular</a>
+                <a>Popular</a>
             </Link>
             <Link href="/new-product">
                 <a>New Product</a>

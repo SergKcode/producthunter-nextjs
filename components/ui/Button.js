@@ -6,7 +6,8 @@ const Button = styled.button`
     text-transform: uppercase;
     border: 1px solid #d1d1d1;
     padding: .8rem 2rem;
-    margin: 2rem auto; 
+    margin: 2rem auto;
+    margin-right:5px; 
     text-align: center;
     background-color: ${props => props.theme.colors.white};
     color: ${props => props.theme.colors.black};

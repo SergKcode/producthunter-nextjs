@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'next/link';
 import Head from 'next/head';
 import Header from './Header';
 
@@ -22,11 +21,7 @@ const Layout = props => {
             </Head>
 
             <Header/>
-            <nav>
-                <Link href="/">Home</Link>
-                <Link href="/about">About</Link>
-            </nav>
-
+        
             <main>
                 {props.children}
             </main>

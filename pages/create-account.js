@@ -36,6 +36,7 @@ const CreateAccount = () => {
   async function createAccount(){
     try{
       await firebase.register(name, email, password);
+      Router.push('/')
 
     }catch(error){
       console.log("ERROR",error.message)

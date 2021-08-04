@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
 import Layout from '../components/layout/Layout';
+import Router from 'next/router';
 import { Form, Field, InputSubmit, Error } from '../components/ui/Form';
 import styled from 'styled-components';
+
+import firebase from '../firebase'
 
 // validaciones
 import useValidation from '../hooks/useValidation';
@@ -24,13 +27,20 @@ const CreateAccount = () => {
 
   const [ error, setError] = useState(false);
 
-  const { values, errors, handleSubmit, handleChange, handleBlur } = useValidation(INITIAL_STATE, validateCreateAccount, createAccount);
+  const { values, errors, handleSubmit, handleChange, handleBlur } = useValidation
+  (INITIAL_STATE, validateCreateAccount, createAccount);
 
 
   const { name, email, password } = values;
 
-  function createAccount(){
-    console.log("Creating...")
+  async function createAccount(){
+    try{
+      await firebase.register(name, email, password);
+
+    }catch(error){
+      console.log("ERROR",error.message)
+      setError(error.message)
+    }
   }
 
 

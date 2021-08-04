@@ -1,5 +1,5 @@
 import app from 'firebase/app';
-
+import 'firebase/auth';
 import firebaseConfig from './config';
 
 class Firebase{
@@ -10,6 +10,20 @@ class Firebase{
         if (!app.apps.length){
             app.initializeApp(firebaseConfig)
         }
+        //to enable the authentication
+        this.auth =app.auth();
+    }
+
+    //Register a user
+    async register(name, email, password){
+        //methods of firebase to register a new user
+        const newUser = await this.auth.createUserWithEmailAndPassword(email, password);
+        
+        //create and update the name
+        return await newUser.user.updateProfile({
+            displayName: nombre
+        })
+
     }
 }
 const firebase = new Firebase();

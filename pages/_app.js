@@ -1,8 +1,9 @@
+import App from 'next/app';
 import Theme from "../styles/theme";
 import GlobalStyles from '../styles/GlobalStyles';
 import firebase, {FirebaseContext} from '../firebase'
 
-function MyApp({ props }) {
+const MyApp = props =>{
 
   const {Component, pageProps} = props;
 

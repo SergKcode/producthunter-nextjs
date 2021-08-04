@@ -6,6 +6,7 @@ import Browser from '../ui/Browser';
 import Navigation from './Navigation';
 import Button from '../ui/Button';
 
+import { FirebaseContext } from '../../firebase';
 
 
 
@@ -42,7 +43,7 @@ const P = styled.p`
 `;
 
 const Header = () => {
-    const user = false
+    const { user, firebase } = useContext(FirebaseContext);
 
     return ( 
         <HeaderTag
@@ -69,8 +70,11 @@ const Header = () => {
                 >
                     { user ?(
                         <>
-                            <P>Hello</P>
-                            <Button bgColor type="Button">Log Out</Button>
+                            <P>Hello:{user.displayName}</P>
+                            <Button 
+                                bgColor 
+                                onClick={() => firebase.signOut() }
+                            >Log Out</Button>
                          </>
                     ):(
                         <>
@@ -78,7 +82,8 @@ const Header = () => {
                                 <Button bgColor>Login</Button>
                             </Link>
                             <Link href="/create-account">
-                                <Button>Create Account</Button>
+                                <Button>
+                                    Create Account</Button>
                             </Link>
                         </>
                     )}

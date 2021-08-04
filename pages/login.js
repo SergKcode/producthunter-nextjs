@@ -85,7 +85,7 @@ const Login = () => {
 
             <InputSubmit 
                 type="submit"
-                value="Create Account"
+                value="Log In"
             />
         </Form>
         </>

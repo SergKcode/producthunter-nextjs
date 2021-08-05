@@ -1,6 +1,7 @@
 import app from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from './config';
+import 'firebase/firestore';
 
 class Firebase{
     //Every time I create a instance of class Firebase, it will initialize the app
@@ -12,6 +13,7 @@ class Firebase{
         }
         //to enable the authentication
         this.auth =app.auth();
+        this.db = app.firestore();
     }
 
     //Register a user
@@ -21,7 +23,7 @@ class Firebase{
         
         //create and update the name
         return await newUser.user.updateProfile({
-            displayName: nombre
+            displayName: name
         })
 
     }

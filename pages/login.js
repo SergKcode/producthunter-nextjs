@@ -32,7 +32,7 @@ const Login = () => {
       Router.push('/');
     } catch (error) {
       console.error('Error', error.message);
-      guardarError(error.message);
+      setError(error.message);
     }
   }
 

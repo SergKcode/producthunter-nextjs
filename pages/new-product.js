@@ -8,7 +8,7 @@ import { Form, Field, InputSubmit, Error } from '../components/ui/Form';
 
 import { FirebaseContext } from '../firebase';
 
-//import Error404 from '../components/layout/404';
+import Error404 from '../components/layout/404';
 
 // validations
 import useValidation from '../hooks/useValidation';
@@ -108,10 +108,10 @@ const NewProduct = () => {
     return (
       <div>
         <Layout>
-          { !user ?/*  <Error404 />  */null : (
+          { !user ? <Error404 /> : (
             <>
               <h1
-              >Nuevo product</h1>
+              >New product</h1>
               <Form
                 onSubmit={handleSubmit}
                 noValidate
@@ -153,9 +153,11 @@ const NewProduct = () => {
                   <Field>
                       <label htmlFor="image">Image</label>
                       <FileUploader 
+                          //to select the format image
                           accept="image/*"
                           id="image"
                           name="image"
+                          //to give a random file name 
                           randomizeFilename
                           storageRef={firebase.storage.ref("products")}
                           onUploadStart={handleUploadStart}

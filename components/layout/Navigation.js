@@ -38,7 +38,7 @@ const Navigation = () => {
 
             {user && ( 
                 <Link href="/new-product">
-                     <a>New Product</a>
+                     <a>New product</a>
                 </Link>
             )}
             

@@ -1,43 +1,39 @@
 import app from 'firebase/app';
 import 'firebase/auth';
-import firebaseConfig from './config';
 import 'firebase/firestore';
+import 'firebase/storage';
 
-class Firebase{
-    //Every time I create a instance of class Firebase, it will initialize the app
-    constructor(){
+import firebaseConfig from './config';
 
-        //if there is no app created create it
-        if (!app.apps.length){
+class Firebase {
+    constructor() {
+        if(!app.apps.length) {
             app.initializeApp(firebaseConfig)
         }
-        //to enable the authentication
-        this.auth =app.auth();
+        this.auth = app.auth();
         this.db = app.firestore();
+        this.storage = app.storage();
     }
 
-    //Register a user
-    async register(name, email, password){
-        //methods of firebase to register a new user
+    // Registra un usuario
+    async register(name, email, password) {
         const newUser = await this.auth.createUserWithEmailAndPassword(email, password);
-        
-        //create and update the name
-        return await newUser.user.updateProfile({
-            displayName: name
-        })
 
+        return await newUser.user.updateProfile({
+            displayName : name
+        })
     }
 
-    // Log in
+    // Inicia sesión del usuario
     async login(email, password) {
         return this.auth.signInWithEmailAndPassword(email, password);
     }
 
-
-    // signOut 
+    // Cierra la sesión del usuario
     async signOut() {
         await this.auth.signOut();
     }
 }
+
 const firebase = new Firebase();
 export default firebase;

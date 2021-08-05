@@ -9,6 +9,8 @@ const useProducts = order => {
 
     useEffect(() => {
         const getProducts = () => {
+
+            //snapshot allows data manipulation
             firebase.db.collection('products').orderBy(order, 'desc').onSnapshot(manageSnaphot)
         }
         getProducts();

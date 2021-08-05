@@ -8,8 +8,6 @@ import Button from '../ui/Button';
 
 import { FirebaseContext } from '../../firebase';
 
-
-
 const HeaderContainer = styled.div`
     max-width: 1200px;
     width: 95%;
@@ -43,6 +41,7 @@ const P = styled.p`
 `;
 
 const Header = () => {
+    
     const { user, firebase } = useContext(FirebaseContext);
 
     return ( 

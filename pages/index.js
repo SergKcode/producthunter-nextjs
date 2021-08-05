@@ -1,20 +1,32 @@
 import React from 'react'
-import styled from 'styled-components';
 import Layout from '../components/layout/Layout'
 
-const H1 = styled.h1`
-  color:${props => props.theme.colors.secondary};
-`
+import ProductDetails from '../components/layout/productDetails';
+import useProducts from '../hooks/useProducts';
+
+
 
 const Home=()=> {
-  return (
 
-    <Layout>
-      <div>
-        <H1>Inicio</H1>
-      </div>
-    </Layout>
-    
+  const { products } = useProducts('created');
+
+  return (
+    <div>
+      <Layout>
+        <div className="listado-productos">
+            <div className="contenedor">
+              <ul className="bg-white">
+                  {products.map(product => (
+                      <ProductDetails
+                          key={product.id}
+                          product={product}
+                      />
+                  ))}
+              </ul>
+            </div>
+        </div>
+      </Layout>
+    </div>
   )
 }
 

@@ -30,8 +30,8 @@ const Search =()=> {
   return (
     <div>
       <Layout>
-        <div className="listado-products">
-            <div className="contenedor">
+        <div className="list-products">
+            <div className="container">
               <ul className="bg-white">
                   {result.map(product => (
                       <ProductDetails

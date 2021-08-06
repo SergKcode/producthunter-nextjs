@@ -17,7 +17,7 @@ const Home=()=> {
             <div className="container">
               <ul className="bg-white">
                   {products.map(product => (
-                      <productDetails
+                      <ProductDetails
                           key={product.id}
                           product={product}
                       />

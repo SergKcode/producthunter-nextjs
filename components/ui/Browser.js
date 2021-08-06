@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 import styled from 'styled-components';
+import Router from 'next/router';
+
 
 const Form = styled.form`
     position:relative;
@@ -33,13 +35,32 @@ const InputSubmit = styled.button`
 `
 const Browser = () => {
 
+    
+    const [ search, setSearch] = useState('');
+
+    const searchProduct = e => {
+        e.preventDefault();
+
+        if(search.trim() === '') return;
+
+        // redirect to /search
+        Router.push({
+            pathname: '/search', 
+            query: { q : search}
+        })
+    }
+
+
+
     return (  
-        <Form>
+        <Form
+            onSubmit={searchProduct}
+        >
 
             <InputText 
                 type="text" 
                 placeholder="Search Products"
-                onChange={console.log("input")}
+                onChange={e =>  setSearch(e.target.value) }
             />
 
             <InputSubmit type="submit">Search</InputSubmit>

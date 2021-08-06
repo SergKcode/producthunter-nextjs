@@ -66,7 +66,7 @@ const Product = () => {
     const [comment, setComment ] = useState({});
     const [queryDB, setQueryDB ] = useState(true);
 
-    // Routing to get the actual id
+    // Routing to get the current id
     const router = useRouter();
     const { query: { id }} = router;
 

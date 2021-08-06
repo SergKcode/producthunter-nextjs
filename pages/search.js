@@ -1,20 +1,48 @@
-import React from 'react'
-import styled from 'styled-components';
-import Layout from '../components/layout/Layout'
+import React from 'react';
+import { useRouter } from 'next/router';
 
-const H1 = styled.h1`
-  color:${props => props.theme.colors.secondary};
-`
+import Layout from '../components/layout/Layout'
+import ProductDetails from '../components/layout/productDetails';
+import useProducts from '../hooks/useProducts';
+
 
 const Search =()=> {
-  return (
+  const router = useRouter();
+  const { query: { q }} = router;
 
-    <div>
-        <Layout>
+  // All products
+  const {products } = useProducts('created');
+  const [ result, setResult ] = useState([]);
+
+  useEffect(() => {
+      const search = q.toLowerCase();
+      const filter = products.filter(product => {
+        return (
+          product.name.toLowerCase().includes(search) || 
+          product.description.toLowerCase().includes(search)
+        )
+      });
+      setResult(filter);
       
-            <H1>Search</H1>
+  }, [ q, products ]);
 
-        </Layout>
+
+  return (
+    <div>
+      <Layout>
+        <div className="listado-products">
+            <div className="contenedor">
+              <ul className="bg-white">
+                  {result.map(product => (
+                      <ProductDetails
+                          key={product.id}
+                          product={product}
+                      />
+                  ))}
+              </ul>
+            </div>
+        </div>
+      </Layout>
     </div>
   )
 }

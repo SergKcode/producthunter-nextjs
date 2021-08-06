@@ -1,24 +1,30 @@
 import React from 'react';
 import Layout from '../components/layout/Layout';
-import styled from 'styled-components';
 
-const H1 = styled.h1`
-  color:${props => props.theme.colors.secondary};
-`
+import useProducts from '../hooks/useProducts';
+import ProductDetails from '../components/layout/productDetails';
+
 
 const Popular = () => {
+  const {products } = useProducts('votes');
+
   return (
-
     <div>
-
       <Layout>
-
-        <H1>Most Popular</H1>
-        
+        <div className="list-products">
+            <div className="container">
+              <ul className="bg-white">
+                  {products.map(product => (
+                      <ProductDetails
+                          key={product.id}
+                          product={product}
+                      />
+                  ))}
+              </ul>
+            </div>
+        </div>
       </Layout>
-
     </div>
-    
   )
 }
 

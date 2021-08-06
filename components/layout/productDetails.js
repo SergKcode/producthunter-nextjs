@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
-import { enGB } from 'date-fns/locale'
+import { enGB } from 'date-fns/locale';
 import Link from 'next/link';
 
 const Product = styled.li`

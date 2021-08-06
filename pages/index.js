@@ -13,8 +13,8 @@ const Home=()=> {
   return (
     <div>
       <Layout>
-        <div className="listado-productos">
-            <div className="contenedor">
+        <div className="list-products">
+            <div className="container">
               <ul className="bg-white">
                   {products.map(product => (
                       <ProductDetails

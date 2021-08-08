@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 
 import Layout from '../components/layout/Layout'
-import ProductDetails from '../components/layout/productDetails';
+import ProductDetails from '../components/layout/ProductDetails';
 import useProducts from '../hooks/useProducts';
 
 

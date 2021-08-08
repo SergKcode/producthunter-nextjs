@@ -92,7 +92,7 @@ const Product = () => {
 
     if(Object.keys(product).length === 0 && !error)  return 'Loading...';
 
-    const { comments, creado, description, company, name, url, urlimage, votes, creator, hasVoted } = product;
+    const { comments, created, description, company, name, url, urlimage, votes, creator, hasVoted } = product;
 
     // admin and validate votes
     const voteProduct = () => {
@@ -132,7 +132,7 @@ const Product = () => {
         })
     }
 
-    // Identifi if it is the product creator
+    // Identify if it is the product creator
     const isCreator = id => {
         if(creator.id == id) {
             return true;
@@ -204,7 +204,7 @@ const Product = () => {
 
                         <ProductContainer>
                             <div>
-                                <p>Publicado hace: { formatDistanceToNow( new Date(creado), {locale: enGB } )} </p>
+                                <p>Publicado hace: { formatDistanceToNow( new Date(created), {locale: enGB } )} </p>
                                 <p>Por: {creator.name} de {company} </p>
                                 <img src={urlimage} />
                                 <p>{description}</p>
@@ -254,11 +254,11 @@ const Product = () => {
                             </div>
 
                             <aside>
-                                <Button
+                                <a  href={url}><Button
                                     target="_blank"
                                     bgColor="true"
-                                    href={url}
-                                >Visit URL</Button>
+                                  
+                                >Visit URL</Button></a>
 
                             
 

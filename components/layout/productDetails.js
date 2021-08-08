@@ -96,12 +96,12 @@ const ProductDetails = ({product}) => {
                     <TextDescription>{description}</TextDescription>
                     <Comments>
                         <div>
-                            <img src="/static/img/comentario.png" />
-                            <p>{comments.length} Comentarios</p>
+                            <img src="/static/images/comment.png" />
+                            <p>{comments.length} Comments</p>
                         </div>
                     </Comments>
                     
-                    <p>Publicado hace: { formatDistanceToNow( new Date(created), {locale: enGB} )} </p>
+                    <p>Published: { formatDistanceToNow( new Date(created), {locale: enGB} )} </p>
                 </div>
             </ProductDescription>
 

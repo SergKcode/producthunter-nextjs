@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../components/layout/Layout';
 
 import useProducts from '../hooks/useProducts';
-import ProductDetails from '../components/layout/productDetails';
+import ProductDetails from '../components/layout/ProductDetails';
 
 
 const Popular = () => {

@@ -1,7 +1,7 @@
 //this file join context and firebase
-
 import firebase from './firebase';
-import FirebaseContext from '../firebase/context';
+
+import FirebaseContext from './context';
 
 export { FirebaseContext }
 

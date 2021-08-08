@@ -1,7 +1,7 @@
 import App from 'next/app';
 import Theme from "../styles/theme";
 import GlobalStyles from '../styles/GlobalStyles';
-import firebase, {FirebaseContext} from '../firebase'
+import firebase, {FirebaseContext} from '../firebase/index'
 import useAuthentication from '../hooks/useAuthentication';
 
 const MyApp = props => {

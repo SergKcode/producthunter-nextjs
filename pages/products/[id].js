@@ -2,12 +2,13 @@ import React, { useEffect, useContext, useState } from 'react';
 import { useRouter } from 'next/router';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { enGB } from 'date-fns/locale';
-import { FirebaseContext } from '../../firebase';
+import { FirebaseContext } from '../../firebase/index';
 import Layout from '../../components/layout/Layout';
 import Error404 from '../../components/layout/404';
 import styled from 'styled-components';
 import { Field, InputSubmit } from '../../components/ui/Form';
 import Button from '../../components/ui/Button';
+
 
 const H1 = styled.h1`
     text-align: center;
@@ -206,7 +207,7 @@ const Product = () => {
                             <div>
                                 <p>Publicado hace: { formatDistanceToNow( new Date(created), {locale: enGB } )} </p>
                                 <p>Por: {creator.name} de {company} </p>
-                                <img src={urlimage} />
+                                <img src={urlimage}/>
                                 <p>{description}</p>
 
                                 { user && (

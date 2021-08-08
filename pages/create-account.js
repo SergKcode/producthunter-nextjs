@@ -4,7 +4,7 @@ import Router from 'next/router';
 import { Form, Field, InputSubmit, Error } from '../components/ui/Form';
 import styled from 'styled-components';
 
-import firebase from '../firebase'
+import firebase from '../firebase/index'
 
 // validaciones
 import useValidation from '../hooks/useValidation';

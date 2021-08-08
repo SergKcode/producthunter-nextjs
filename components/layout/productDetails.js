@@ -4,6 +4,7 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { enGB } from 'date-fns/locale';
 import Link from 'next/link';
 
+
 const Product = styled.li`
     padding: 4rem;
     display: flex;
@@ -58,7 +59,7 @@ const Comments = styled.div`
     }
 `;
 
-const Image = styled.img`
+const Img = styled.img`
     width: 200px;
 `;
 
@@ -86,7 +87,7 @@ const ProductDetails = ({product}) => {
         <Product>
             <ProductDescription>
                 <div>
-                    <Image src={urlimage}  />
+                    <img src={urlimage}/>
                 </div>
 
                 <div>
@@ -96,7 +97,7 @@ const ProductDetails = ({product}) => {
                     <TextDescription>{description}</TextDescription>
                     <Comments>
                         <div>
-                            <img src="/static/images/comment.png" />
+                            <Img src="/static/images/comment.png" />
                             <p>{comments.length} Comments</p>
                         </div>
                     </Comments>

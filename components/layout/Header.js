@@ -5,8 +5,9 @@ import styled from 'styled-components';
 import Browser from '../ui/Browser';
 import Navigation from './Navigation';
 import Button from '../ui/Button';
+import { FirebaseContext } from '../../firebase/index';
 
-import { FirebaseContext } from '../../firebase';
+
 
 const HeaderContainer = styled.div`
     max-width: 1200px;

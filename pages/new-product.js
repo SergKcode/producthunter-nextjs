@@ -110,7 +110,7 @@ const NewProduct = () => {
       <Layout>
         { !user ? <Error404 /> : (
           <>
-            <H1>Nuevo product</H1>
+            <H1>New product</H1>
             <Form
               onSubmit={handleSubmit}
               noValidate

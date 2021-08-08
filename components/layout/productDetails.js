@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import { enGB } from 'date-fns/locale';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 const Product = styled.li`
@@ -87,7 +88,7 @@ const ProductDetails = ({product}) => {
         <Product>
             <ProductDescription>
                 <div>
-                    <img src={urlimage}/>
+                    <Image src={urlimage} width={500} height={200}/>
                 </div>
 
                 <div>

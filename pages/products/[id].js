@@ -8,6 +8,7 @@ import Error404 from '../../components/layout/404';
 import styled from 'styled-components';
 import { Field, InputSubmit } from '../../components/ui/Form';
 import Button from '../../components/ui/Button';
+import Image from 'next/image';
 
 
 const H1 = styled.h1`
@@ -207,7 +208,7 @@ const Product = () => {
                             <div>
                                 <p>Publicado hace: { formatDistanceToNow( new Date(created), {locale: enGB } )} </p>
                                 <p>Por: {creator.name} de {company} </p>
-                                <img src={urlimage}/>
+                                <Image src={urlimage} width={500} height={500}/>
                                 <p>{description}</p>
 
                                 { user && (
